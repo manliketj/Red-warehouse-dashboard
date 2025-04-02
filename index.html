@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Inventory Dashboard</title>
+    <script src="https://kit.fontawesome.com/8d5350639c.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            height: 100vh;
+            width: 150px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #343a40;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .sidebar a {
+            padding: 20px 10px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #575d63;
+        }
+        .sidebar a i{
+            font-size: 30px;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h5 class="text-white text-center">RED WAREHOUSE</h5>
+        <a href="#"><i class="fa-solid fa-mound"></i> <br>Dashbaord </a>
+        <a href="#"><i class="fa-solid fa-pencil"></i> <BR>Inventory Creation Form</a>
+        <a href="#"><i class="fa-solid fa-cart-flatbed"></i> <br>Put Away to Section </a>
+        <a href="#"><i class="fa-solid fa-warehouse"></i> <br> Inventory Lists</a>
+        <a href="#"><i class="fa-solid fa-truck-pickup"></i> <br> Inbound Shipments</a>
+        <a href="#"><i class="fa-solid fa-truck-pickup"></i> <br>Outbound Dispatch Orders</a>
+    </div>
+    
+    <div class="content">
+        <h2 class="mb-5">Warehouse Inventory Dashboard</h2>
+        <div class="card p-3 mb-4">
+            <form class="row g-3">
+                <div class="col">
+                    <label for="fileStatus" class="form-label">Activity</label>
+                    <select id="fileStatus" class="form-select">
+                        <option selected>All</option>
+                        <option value="1">Open</option>
+                        <option value="2">Closed</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="fileStatus" class="form-label">File Status</label>
+                    <select id="fileStatus" class="form-select">
+                        <option selected>All</option>
+                        <option value="1">Open</option>
+                        <option value="2">Closed</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="fileStatus" class="form-label">File Revenue Status</label>
+                    <select id="fileStatus" class="form-select">
+                        <option selected>All</option>
+                        <option value="1">Open</option>
+                        <option value="2">Closed</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="fileStatus" class="form-label">File Cost Status</label>
+                    <select id="fileStatus" class="form-select">
+                        <option selected>All</option>
+                        <option value="1">Open</option>
+                        <option value="2">Closed</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="year" class="form-label">Year</label>
+                    <select id="year" class="form-select">
+                        <option selected>All</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                    </select>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-body text-left">
+                        <div class="row">
+                            <div class="col-3 text-center"><i class="fa-solid fa-mound fa-3x"></i></div>
+                            <div class="col">
+                                <p class="card-text h3">0</p>
+                                <h5 class="card-title">Inventory Items Waiting for Info</h5>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-warning text-white">
+                    <div class="card-body text-left">
+                        <div class="row">
+                            <div class="col-3 text-center"><i class="fa-solid fa-mound fa-3x"></i></div>
+                            <div class="col">
+                                <p class="card-text h3">0</p>
+                                <h5 class="card-title">Inventory Items Expected Tomorrow</h5>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-warning text-white">
+                    <div class="card-body text-left">
+                        <div class="row">
+                            <div class="col-3 text-center"><i class="fa-solid fa-mound fa-3x"></i></div>
+                            <div class="col">
+                                <p class="card-text h3">0</p>
+                                <h5 class="card-title">Inventory Items expected TODAY</h5>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white" style="background-color: #825D00;">
+                    <div class="card-body text-left">
+                        <div class="row">
+                            <div class="col-3 text-center"><i class="fa-solid fa-mound fa-3x"></i></div>
+                            <div class="col">
+                                <p class="card-text h3">0</p>
+                                <h5 class="card-title">Items to be Put in <br> Stock</h5>
+                            </div>
+                        </div>
+                        
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card text-white" style="background-color: #EE5628;">
+                    <div class="card-body text-left">
+                        <div class="row">
+                            <div class="col-3 text-center"><i class="fa-solid fa-mound fa-3x"></i></div>
+                            <div class="col">
+                                <p class="card-text h3">0</p>
+                                <h5 class="card-title">Inventory Items without allocated storage section</h5>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white" style="background-color: #B78200;">
+                    <div class="card-body text-left">
+                        <div class="row">
+                            <div class="col-3 text-center"><i class="fa-solid fa-mound fa-3x"></i></div>
+                            <div class="col">
+                                <p class="card-text h3">0</p>
+                                <h5 class="card-title">Labels to be <br> printed</h5>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white" style="background-color: #EF7F11;">
+                    <div class="card-body text-left">
+                        <div class="row">
+                            <div class="col-3 text-center"><i class="fa-solid fa-mound fa-3x"></i></div>
+                            <div class="col">
+                                <p class="card-text h3">0</p>
+                                <h5 class="card-title">Inventory Items longer than 90 days in stock</h5>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white" style="background-color: #f78009;">
+                    <div class="card-body text-left">
+                        <div class="row">
+                            <div class="col-3 text-center"><i class="fa-solid fa-mound fa-3x"></i></div>
+                            <div class="col">
+                                <p class="card-text h3">0</p>
+                                <h5 class="card-title">Open OS&D inventory Items in stock</h5>
+                            </div>
+                        </div>
+                        
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card bg-success text-white">
+                    <div class="card-body text-left">
+                        <div class="row">
+                            <div class="col-3 text-center"><i class="fa-solid fa-mound fa-3x"></i></div>
+                            <div class="col">
+                                <p class="card-text h3">0</p>
+                                <h5 class="card-title">Inventory Items Waiting for Info</h5>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white" style="background-color: #1B57B7;">
+                    <div class="card-body text-left">
+                        <div class="row">
+                            <div class="col-3 text-center"><i class="fa-solid fa-mound fa-3x"></i></div>
+                            <div class="col">
+                                <p class="card-text h3">0</p>
+                                <h5 class="card-title">Inventory Items Expected Tomorrow</h5>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-warning text-white">
+                    <div class="card-body text-left">
+                        <div class="row">
+                            <div class="col-3 text-center"><i class="fa-solid fa-mound fa-3x"></i></div>
+                            <div class="col">
+                                <p class="card-text h3">0</p>
+                                <h5 class="card-title">Inventory Items expected TODAY</h5>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-danger text-white">
+                    <div class="card-body text-left">
+                        <div class="row">
+                            <div class="col-3 text-center"><i class="fa-solid fa-mound fa-3x"></i></div>
+                            <div class="col">
+                                <p class="card-text h3">0</p>
+                                <h5 class="card-title">Items to be Put in <br> Stock</h5>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
